@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Smart e-Museum</title>
+   
+</head>
+<body>
+    <script src="../static/js/scripts.js" type="module"></script>
+    <canvas class = "canvas">
+
+    </canvas>
+    <div class = "page-wrapper">
+         <section class = "intro">
+            <div class = "intro-wrapper">
+                <br>
+                <h1 class = "intro-text">Welcome to the Museum!</h1>
+                <h2 class = "intro-desc">“Step into the future of art and culture at the museum”</h2>
+                
+                <div class = "intro-icon">
+                    <h3 class="intro-h3">Scroll to Explore</h3>
+                    <i class="fa fa-angle-double-down" style="font-size:24px"></i>
+
+                </div>
+            </div>
+        </section>
+        <div class = "first-move section-margin"> </div>
+
+        <section class="section">
+
+            <div class="section-detail-wrapper">
+                <h1 class="art-title">Island in Bloom</h1><br>
+                <p class="art-desc">Captures the serene beauty of a small island oasis, where a delicate pink tree stands tall against a soft pink sky. <br>
+                    The tree's branches and leaves are in full bloom, creating a stunning contrast against the lush greenery of the island. <br>
+                    The water surrounding the island is calm and clear, reflecting the warm hues of the sky above. The overall effect is one of tranquility and peace, 
+                    a perfect escape from the hustle and bustle of everyday life. <br>
+                    The essence of natural beauty and inviting the viewer to lose themselves in its serene and magical world.</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class="comment-title">Comment</h2>
+                <form id ="commentForm" action="/index" method = "POST" >
+                    <input type="hidden" id = "aid" name="aid" value="1">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <input type="submit" value="Sumbit"> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                
+                <br>
+
+                <ul>
+                    {% for comment in FirstComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+            <div class = "second-move section-margin-s"> </div> 
+            <div class = "section-detail-wrapper">
+                <h1 class ="art-title">Voyager</h1>
+                <p class = "art-desc"> The boat's imposing size is showcased, its intricate details and design exquisitely captured. <br>
+                    The sails are depicted in full billow, capturing the wind and propelling the boat forward. <br>
+                    The water is rendered with incredible precision, every ripple and wave meticulously crafted. <br>
+                    The overall effect is one of power and elegance, as if the boat is a living, breathing entity with a will of its own. <br>
+                    The timeless allure of the open seas and the vessels that journey across them, 
+                    leaving a lasting impression on the viewer.</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class ="comment-title">Comment</h2>
+                <form id ="commentForm" action="/index" method = "POST">
+                    <input type="hidden" id = "aid" name="aid" value="2">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <input type="submit" value="Sumbit"> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                <br>
+
+                <ul>
+                    {% for comment in SecondComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+            <div class = "third-move section-margin-s"> </div> 
+            <div class = "section-detail-wrapper">
+                <h1 class = "art-title">Illuminated</h1>
+                <p class = "art-desc">The skyline is illuminated by a sea of twinkling lights, the buildings and skyscrapers rising majestically into the night sky. <br>
+                    The darkness of the night is punctuated by the glow of the city, casting a warm and inviting glow over the scene. <br>
+                    The overall effect is one of grandeur and awe, as if the city is alive and pulsating with energy, 
+                    capturing the allure and mystery of the urban landscape and inviting the viewer to lose themselves in its glittering beauty.</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class = "comment-title">Comment</h2>
+                <form id ="commentForm" action="/index" method = "POST">
+                    <input type="hidden" id = "aid" name="aid" value="3">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <input type="submit" value="Sumbit"> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                <br>
+
+                <ul>
+                    {% for comment in ThirdComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+        </section> 
+        <div class = "fourth-move section-margin"> </div>
+
+        <section class="section right">
+            <div class="section-detail-wrapper">
+                <h1 class = "art-title">Galaxy</h1>
+                <p class="art-desc"> The rich colors of the galaxies, ranging from deep blues to fiery oranges, create a sense of movement and energy that draws the viewer in. <br>
+                    Each galaxy is unique in its shape and composition, with stars twinkling like tiny jewels within them. <br>
+                    The image is a breathtaking reminder of the vastness and wonder of the universe, inviting the viewer to contemplate the mysteries of the cosmos. <br>
+                    This piece of art is a true masterpiece, capturing the beauty and majesty of the galaxies in a way that is both mesmerizing and humbling.</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class="comment-title">Comment</h2>
+                <form id="commentForm" action="/index" method = "POST">
+                    <input type="hidden" id = "aid" name="aid" value="4">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <input type="submit" value="Sumbit"> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                <br>
+
+                <ul>
+                    {% for comment in FourthComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+
+            <div class = "fifth-move section-margin-s"> </div> 
+
+            <div class="section-detail-wrapper">
+                <h1 class="art-title">Suzanne</h1>
+                <p class="art-desc">Each one exquisitely crafted with incredible detail and precision. <br>The monkeys are depicted in a naturalistic style, 
+                    with lifelike features that give them a sense of personality and character. <br>The expressions on their faces are captivating, <br>
+                    with one monkey appearing curious and alert while the other seems to be in a state of repose. <br>
+                    The textures and contours of the sculptures are captured with remarkable skill, giving them a sense of depth and dimensionality. <br>
+                    This artwork is a testament to the artist's mastery of their craft, and a stunning tribute to the beauty and complexity of the natural world.</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class="comment-title">Comment</h2>
+                <form id="commentForm" action="/index" method = "POST">
+                    <input type="hidden" id = "aid" name="aid" value="5">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <input type="submit" value="Sumbit"> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                <br>
+
+                <ul>
+                    {% for comment in FifthComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+           
+        </section> 
+        <div class = "sixth-move section-margin right"> </div> 
+         <section class="section right">
+            <div class="section-detail-wrapper">
+                <h1 class="art-title">Boxes</h1>
+                <p class="art-desc">Meticulously crafted with incredible attention to detail. <br>
+                    The cubes are rendered with a stunning mix of textures and patterns, creating a sense of depth and complexity that draws the viewer in. <br>
+                    The contrast between the smooth and rough surfaces of the cubes adds to their visual appeal, as does the interplay of light and shadow across their surfaces. <br>
+                    The overall effect is one of mesmerizing beauty, as if the cubes are two pieces of a larger puzzle waiting to be unlocked.<br> A testament to the artist's skill and creativity,
+                     and a stunning tribute to the power of geometric abstraction.</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class="comment-title">Comment</h2>
+                <form id="commentForm" action="/index" method = "POST">
+                    <input type="hidden" id = "aid" name="aid" value="6">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <input type="submit" value="Sumbit"> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                <br>
+
+                <ul>
+                    {% for comment in SixthComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                   
+                </ul>
+            </div>
+            <div class = "six-five-move section-margin-xs"> </div> 
+            <div class = "seventh-move section-margin-s"> </div> 
+            <div class="section-detail-wrapper">
+                <h1 class="art-title">Spheres</h1>
+                <p class="art-desc">The three sphere sculptures on display are an exquisite example of skilled craftsmanship and artistry. <br>
+                    Each sphere has been carefully crafted with precision and attention to detail, with a unique texture and pattern that distinguishes it from the others. <br>
+                    The smooth and polished surfaces of the spheres reflect the light, creating a sense of depth and dimensionality that draws the viewer in. <br>
+                    The way in which the spheres are arranged creates a sense of balance and harmony, as if they are in perfect alignment with one another.<br>
+                     This artwork is a stunning tribute to the beauty of abstract form and a testament to the artist's incredible skill and creativity.</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class="comment-title">Comment</h2>
+                <form id="commentForm" action="/index" method = "POST">
+                    <input type="hidden" id = "aid" name="aid" value="7">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <input type="submit" value="Sumbit"> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                <br>
+
+                <ul>
+                    {% for comment in SeventhComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                   
+                </ul>
+            </div>
+            <div class = "eight-move section-margin right"> </div> 
+            
+        </section> 
+        <div class = "nine-move section-margin right"> </div> 
+        <section class = "section left">
+            <div class="section-detail-wrapper">
+                <h1 class="art-title">Sweet Delight</h1>
+                <p class="art-desc">A mouth-watering donut sculpture, crafted with incredible detail and precision. <br>
+                    The donut is glazed with a thick layer of icing, which glistens in the light and appears almost edible. <br>
+                    The texture and contours of the donut are captured with remarkable skill, giving it a sense of depth and dimensionality. <br>
+                    The overall effect is one of temptation and indulgence, as if the viewer can almost taste the sweet treat. <br>
+                    A tribute to the beauty and allure of culinary art, and a tantalizing reminder of the joys of indulgence..</p>
+            </div>
+            <div class="section-comment-wrapper">
+                <h2 class="comment-title">Comment</h2>
+                <form id="commentForm" action="/index" method = "POST">
+                    <input type="hidden" id = "aid" name="aid" value="8">
+                    <input type="text" id="comment" name="comment" placeholder =" Leave your comment">
+                    <!-- <button type="submit" >Submit</button> -->
+                    <button type="submit">
+                        <i class="fa fa-paper-plane"></i> 
+                    </button>
+                </form>
+                <br>
+
+                <ul>
+                    {% for comment in EighthComments %}
+                    <li>{{comment.comment}}</li>
+                    {% endfor %}
+                    
+                </ul>
+
+                
+            </div>
+        </section>
+    </div>
+</body>
+</html>
